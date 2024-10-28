@@ -7,17 +7,18 @@ document.addEventListener('DOMContentLoaded', function(){
         num += 1;
 
         child.addEventListener('click', function(){
-            if(currentPlayer=="X"){
+            if(currentPlayer=="X" && child.innerHTML==""){
                 child.classList.add("X");
                 child.innerHTML = "X";
                 array1[Number(child.id)] = "X";
+                currentPlayer = currentPlayer == "X" ? "O" : "X";
             }
-            else{
+            else if(currentPlayer=="O" && child.innerHTML==""){
                 child.classList.add("O");
                 child.innerHTML = "O";
                 array1[Number(child.id)] = "O";
+                currentPlayer = currentPlayer == "X" ? "O" : "X";
             }
-            currentPlayer = currentPlayer == "X" ? "O" : "X";
             checkStatus();
         })
 
