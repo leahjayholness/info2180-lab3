@@ -29,6 +29,23 @@ document.addEventListener('DOMContentLoaded', function(){
             child.classList.remove("hover");
         })
     }
+
+    document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+        let laststatus = document.getElementById("status");
+        laststatus.innerHTML = "Move your mouse over a square and click to play an X or an O.";
+        laststatus.classList.remove('you-won');
+    
+        let board = document.getElementById("board");
+        for(const child of board.children){
+            child.classList.remove("X");
+            child.classList.remove("O");
+            child.innerHTML = "";
+        }
+    
+        currentPlayer = "X";
+        array1 = ['0','1','2','3','4','5','6','7','8'];
+    
+    })
 })
 
 let currentPlayer = "X";
